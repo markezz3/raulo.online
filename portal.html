@@ -337,22 +337,26 @@ function reset(){
 
 // 🔽 FUNCIÓN DE LOGOUT
 function logout(){
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("username");
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("username");
     window.location.href = "index.html";
 }
 
 // Verificar autenticación y mostrar nombre de usuario
 window.addEventListener("load", function(){
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const username = localStorage.getItem("username");
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+    const username = sessionStorage.getItem("username");
     
     if(isLoggedIn !== "true"){
         // Si no está autenticado, redirigir a index.html
         window.location.href = "index.html";
-    } else if(username){
+        return;
+    }
+
+    const userNameElement = document.getElementById("userName");
+    if(username && userNameElement){
         // Mostrar el nombre de usuario capitalizado
-        document.getElementById("userName").textContent = username.charAt(0).toUpperCase() + username.slice(1);
+        userNameElement.textContent = username.charAt(0).toUpperCase() + username.slice(1);
     }
 });
 </script>
