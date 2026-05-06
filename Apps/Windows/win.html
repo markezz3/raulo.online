@@ -159,6 +159,10 @@ h1 {
     animation: fadeUp 0.8s ease-out 0.2s backwards;
 }
 
+.multimedia-panel {
+    grid-column: 1 / -1;
+}
+
 .section-panel::after {
     content: '';
     position: absolute;
@@ -194,6 +198,10 @@ h1 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
     padding: 24px 28px 30px;
+}
+
+.multimedia-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .browser-card {
@@ -319,9 +327,17 @@ h1 {
         grid-template-columns: 1fr;
     }
 
+    .multimedia-panel {
+        grid-column: auto;
+    }
+
     .browser-grid {
         grid-template-columns: repeat(3, minmax(130px, 1fr));
         overflow-x: auto;
+    }
+
+    .multimedia-grid {
+        grid-template-columns: repeat(4, minmax(130px, 1fr));
     }
 }
 
@@ -350,6 +366,10 @@ h1 {
     .browser-grid {
         grid-template-columns: 1fr;
         padding: 20px;
+    }
+
+    .multimedia-grid {
+        grid-template-columns: 1fr;
     }
 
     .browser-card {
@@ -413,16 +433,57 @@ h1 {
         <aside class="side-stack" aria-label="Secciones próximas">
             <div class="mini-panel">
                 <h3>Más secciones</h3>
-                <p>Este collage queda listo para sumar utilidades, compresores, editores y herramientas de soporte con el mismo formato.</p>
+                <p>El collage puede seguir creciendo con utilidades, compresores, editores y herramientas de soporte con el mismo formato.</p>
                 <div class="status-line"></div>
             </div>
 
             <div class="mini-panel">
                 <h3>Fuentes oficiales</h3>
-                <p>Los botones abren las páginas de descarga de Google Chrome, Mozilla Firefox y Opera.</p>
+                <p>Los botones abren páginas oficiales de descarga para instalar cada app desde su fuente principal.</p>
                 <div class="status-line"></div>
             </div>
         </aside>
+
+        <article class="section-panel multimedia-panel">
+            <div class="section-header">
+                <h2>Multimedia</h2>
+                <p>Herramientas para diseño, grabación, reproducción y música desde sus sitios oficiales.</p>
+            </div>
+
+            <div class="browser-grid multimedia-grid">
+                <a class="browser-card" href="https://www.canva.com/download/windows/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Canva">
+                    <span class="icon-stage">
+                        <img src="../../icons/canva.svg" alt="Canva">
+                    </span>
+                    <span class="browser-name">Canva</span>
+                    <span class="download-label">Descargar</span>
+                </a>
+
+                <a class="browser-card" href="https://obsproject.com/download" target="_blank" rel="noopener noreferrer" aria-label="Descargar OBS Studio">
+                    <span class="icon-stage">
+                        <img src="../../icons/obs.svg" alt="OBS Studio">
+                    </span>
+                    <span class="browser-name">OBS Studio</span>
+                    <span class="download-label">Descargar</span>
+                </a>
+
+                <a class="browser-card" href="https://www.videolan.org/vlc/download-windows.html" target="_blank" rel="noopener noreferrer" aria-label="Descargar VLC media player">
+                    <span class="icon-stage">
+                        <img src="../../icons/vlc.svg" alt="VLC media player">
+                    </span>
+                    <span class="browser-name">VLC</span>
+                    <span class="download-label">Descargar</span>
+                </a>
+
+                <a class="browser-card" href="https://www.spotify.com/download/windows/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Spotify">
+                    <span class="icon-stage">
+                        <img src="../../icons/spotify.svg" alt="Spotify">
+                    </span>
+                    <span class="browser-name">Spotify</span>
+                    <span class="download-label">Descargar</span>
+                </a>
+            </div>
+        </article>
     </section>
 </main>
 </body>
