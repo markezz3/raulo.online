@@ -6,17 +6,18 @@
 <title>Raulo Online</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="login.css">
-
 </head>
-
 <body>
-
-<!-- 🔽 MODAL DE LOGIN -->
-<div class="login-overlay" id="loginOverlay">
-    <div class="login-container">
-        <form id="loginForm" onsubmit="handleLogin(event)">
+<div class="page-shell">
+    <div class="login-card">
+        <div class="brand-block">
+            <span class="brand-label">Raulo</span>
+            <span class="brand-tag">Online</span>
+        </div>
+        <h1>Iniciar sesión</h1>
+        <p class="lead">Introduce las credenciales para acceder al portal seguro.</p>
+        <form id="loginForm">
             <div class="form-group">
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" placeholder="Ingresa tu usuario" required>
@@ -30,5 +31,35 @@
         <p class="login-info">El sitio requiere de un usuario para continuar</p>
     </div>
 </div>
+<script>
+const validCredentials = [
+    { user: "admin", pass: "admin" }
+];
+
+function handleLogin(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value.trim().toLowerCase(); //
+    const password = document.getElementById("password").value;
+
+    const isValid = validCredentials.some(cred => cred.user === username && cred.pass === password);
+    if (!isValid) {
+        alert("Usuario o contraseña incorrectos. Intenta con admin/admin.");
+        document.getElementById("loginForm").reset();
+        return;
+    }
+
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", username);
+    window.location.href = "portal.html";
+}
+
+window.addEventListener("load", () => {
+    if (localStorage.getItem("isLoggedIn") === "true") {
+        window.location.href = "portal.html";
+        return;
+    }
+    document.getElementById("loginForm").addEventListener("submit", handleLogin);
+});
+</script>
 </body>
 </html>
