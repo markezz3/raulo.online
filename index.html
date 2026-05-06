@@ -618,9 +618,10 @@ function type(text, cls){
 
 function getBrowser(){
     let ua=navigator.userAgent;
+    if(ua.includes("Edg")) return "Edge";       // Con este orden, detectamos Edge antes que Chrome, ya que Edge también incluye "Chrome" en su user agent
     if(ua.includes("Chrome")) return "Chrome";
+    if(ua.includes("Safari") && !ua.includes("Chrome")) return "Safari";
     if(ua.includes("Firefox")) return "Firefox";
-    if(ua.includes("Edg")) return "Edge";
     return "Unknown";
 }
 
@@ -848,12 +849,12 @@ async function startScan(){
 
     await type("> scan complete ✔","cmd");
 
-    document.getElementById("resetBtn").style.display="block";
+    document.getElementById("resetBtn").style.display="block"; 
 }
 
 function reset(){
     terminal.style.display="none";
-    document.getElementById("resetBtn").style.display="none";
+    document.getElementById("resetBtn").style.display="none"; 
     document.getElementById("startBtn").style.display="block";
 }
 
@@ -861,13 +862,13 @@ function reset(){
 function handleLogin(event) {
     event.preventDefault();
     
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("username").value.toLowerCase();   // Convertir a minúsculas para evitar problemas de mayúsculas
     const password = document.getElementById("password").value;
     
     // Credenciales válidas
     const validCredentials = [
-        { user: "admin", pass: "R@ul.0310" },
-        { user: "guest", pass: "guest" }
+        { user: "admin", pass: "admin" },
+        { user: "guest", pass: "guest" } 
     ];
     
     // Verificar si las credenciales son válidas
@@ -883,7 +884,7 @@ function handleLogin(event) {
         // Redirigir a portal.html
         window.location.href = "portal.html";
     } else {
-        alert("❌ Usuario o contraseña incorrectos.\n\nIntenta:\n- Contacta a un administrador\n- Presiona aceptar e intenta de nuevo");
+        alert("❌ Usuario o contraseña incorrectos.\n\nIntenta:\n- Contactar a un administrador\n- Presiona aceptar e intenta de nuevo");
         document.getElementById("loginForm").reset();
     }
 }
