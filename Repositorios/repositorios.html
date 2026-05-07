@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repositorios - Raulo Online</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+
+<style>
+    body {
+        gap: 0;
+    }
+
+    .page-header {
+        width: 100%;
+        max-width: 960px;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 20px;
+        animation: fadeIn 0.8s ease-out 0.2s backwards;
+    }
+
+    .back-link {
+        border: 2px solid #4fc3f7;
+        color: #4fc3f7;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        background: rgba(79, 195, 247, 0.05);
+    }
+
+    .back-link:hover {
+        background: #4fc3f7;
+        color: #0a0a0a;
+        box-shadow: 0 0 20px rgba(79, 195, 247, 0.6);
+        transform: translateY(-2px);
+    }
+
+    .repo-grid {
+        width: 100%;
+        max-width: 960px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+        margin-top: 35px;
+    }
+
+    .repo-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 245px;
+        padding: 28px;
+        border-radius: 16px;
+        border: 1px solid rgba(79, 195, 247, 0.15);
+        background: rgba(26, 26, 46, 0.55);
+        color: #a9d7ec;
+        animation: fadeIn 0.8s ease-out;
+    }
+
+    .repo-card:hover {
+        border-color: rgba(79, 195, 247, 0.5);
+        box-shadow: 0 8px 32px rgba(79, 195, 247, 0.15);
+        transform: translateY(-5px);
+    }
+
+    .repo-card h2 {
+        margin: 0 0 14px;
+        color: #4fc3f7;
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(1.25rem, 3vw, 1.65rem);
+    }
+
+    .repo-card p {
+        margin: 0;
+        color: #99a8b8;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        flex: 1;
+    }
+
+    .repo-actions {
+        margin-top: 24px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .repo-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 20px;
+        background: linear-gradient(135deg, #4fc3f7, #00bcd4);
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.2px;
+        box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+    }
+
+    .repo-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(79, 195, 247, 0.6);
+    }
+
+    .repo-tag {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 14px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(129, 199, 132, 0.12);
+        color: #81c784;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 700px) {
+        .page-header,
+        .repo-grid {
+            max-width: 100%;
+        }
+
+        .repo-grid {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        .repo-card {
+            min-height: auto;
+            padding: 22px;
+        }
+
+        .repo-button {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+<div class="subtitle">www.raulo.online</div>
+
+<div class="page-header">
+    <a class="back-link" href="../../portal.html">Regresar al portal</a>
+</div>
+
+<div class="description">
+    Accesos directos a repositorios de herramientas externas para revisar su documentacion, codigo y opciones de descarga desde GitHub.
+</div>
+
+<h1>Repositorios</h1>
+
+<main class="repo-grid">
+    <section class="repo-card">
+        <span class="repo-tag">GitHub</span>
+        <h2>MAS Script</h2>
+        <p>
+            Repositorio de Microsoft Activation Scripts, una coleccion de scripts mantenida por la comunidad para gestionar activaciones de productos Microsoft. Revisa siempre el README y el codigo antes de ejecutar cualquier herramienta.
+        </p>
+        <div class="repo-actions">
+            <a class="repo-button" href="https://github.com/massgravel/Microsoft-Activation-Scripts" target="_blank" rel="noopener noreferrer">Abrir repositorio</a>
+        </div>
+    </section>
+
+    <section class="repo-card">
+        <span class="repo-tag">GitHub</span>
+        <h2>Anydesk Tool</h2>
+        <p>
+            Herramienta de GeRRyOD enfocada en restablecer datos locales relacionados con AnyDesk. Consulta las instrucciones del proyecto y confirma compatibilidad antes de descargar o usar sus archivos.
+        </p>
+        <div class="repo-actions">
+            <a class="repo-button" href="https://github.com/GeRRyOD/AnyDesk-Reset-Tool/tree/main" target="_blank" rel="noopener noreferrer">Abrir repositorio</a>
+        </div>
+    </section>
+</main>
+
+<script>
+window.addEventListener("load", function(){
+    const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+
+    if(isLoggedIn !== "true"){
+        window.location.href = "../../index.html";
+    }
+});
+</script>
+</body>
+</html>
