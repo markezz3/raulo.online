@@ -18,7 +18,7 @@ Este proyecto combina una interfaz web simple con utilidades de diagnóstico y e
 - ChatGPT
 - VPS
 - Dominios (GoDaddy)
-
+- Windows Server
 
 ## Objetivo
 
