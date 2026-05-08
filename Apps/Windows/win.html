@@ -6,383 +6,8 @@
 <title>Windows Apps | Raulo Online</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-* {
-    box-sizing: border-box;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes shine {
-    from {
-        transform: translateX(-120%) rotate(12deg);
-    }
-    to {
-        transform: translateX(220%) rotate(12deg);
-    }
-}
-
-body {
-    margin: 0;
-    min-height: 100vh;
-    color: #e5e5e5;
-    font-family: 'Inter', sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(79, 195, 247, 0.16), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(129, 199, 132, 0.13), transparent 30%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-    padding: 26px 20px 54px;
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.page-shell {
-    width: min(1120px, 100%);
-    margin: 0 auto;
-}
-
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    animation: fadeUp 0.7s ease-out;
-}
-
-.brand {
-    color: #4fc3f7;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.back-btn {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    padding: 0 18px;
-    border: 2px solid #4fc3f7;
-    border-radius: 8px;
-    color: #4fc3f7;
-    font-weight: 700;
-    overflow: hidden;
-}
-
-.back-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0 auto 0 -70%;
-    width: 55%;
-    background: linear-gradient(90deg, transparent, rgba(79, 195, 247, 0.55), transparent);
-    transform: skewX(-18deg);
-}
-
-.back-btn:hover::before,
-.back-btn:focus-visible::before {
-    animation: shine 0.65s ease;
-}
-
-.back-btn:hover,
-.back-btn:focus-visible {
-    background: #4fc3f7;
-    color: #0a0a0a;
-    box-shadow: 0 0 22px rgba(79, 195, 247, 0.52);
-    outline: none;
-}
-
-.hero {
-    padding: 74px 0 42px;
-    animation: fadeUp 0.8s ease-out 0.08s backwards;
-}
-
-.eyebrow {
-    color: #81c784;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-}
-
-h1 {
-    max-width: 780px;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2.25rem, 7vw, 4.6rem);
-    line-height: 1.02;
-    background: linear-gradient(135deg, #4fc3f7, #81c784);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.intro {
-    max-width: 660px;
-    margin: 20px 0 0;
-    color: #99a8b8;
-    font-size: clamp(0.95rem, 2vw, 1.06rem);
-    line-height: 1.7;
-}
-
-.collage {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 26px;
-    align-items: start;
-}
-
-.section-panel {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(79, 195, 247, 0.17);
-    border-radius: 16px;
-    background: rgba(26, 26, 46, 0.58);
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.24);
-    animation: fadeUp 0.8s ease-out 0.2s backwards;
-}
-
-.multimedia-panel {
-    grid-column: 1 / -1;
-}
-
-.section-panel::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background: linear-gradient(135deg, rgba(79, 195, 247, 0.08), transparent 42%, rgba(129, 199, 132, 0.08));
-}
-
-.section-header {
-    position: relative;
-    z-index: 1;
-    padding: 26px 28px 8px;
-}
-
-.section-header h2 {
-    margin: 0;
-    color: #4fc3f7;
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.35rem, 3vw, 2rem);
-}
-
-.section-header p {
-    max-width: 570px;
-    margin: 8px 0 0;
-    color: #99a8b8;
-    line-height: 1.6;
-}
-
-.browser-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    padding: 24px 28px 30px;
-}
-
-.multimedia-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.browser-card {
-    position: relative;
-    min-height: 210px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 22px 16px;
-    border: 1px solid rgba(79, 195, 247, 0.18);
-    border-radius: 14px;
-    background: rgba(10, 10, 10, 0.36);
-    outline: none;
-    overflow: hidden;
-}
-
-.browser-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    opacity: 0;
-    background: linear-gradient(135deg, rgba(79, 195, 247, 0.18), rgba(129, 199, 132, 0.16));
-}
-
-.browser-card:hover,
-.browser-card:focus-visible {
-    transform: translateY(-8px) scale(1.02);
-    border-color: rgba(79, 195, 247, 0.7);
-    box-shadow: 0 14px 32px rgba(79, 195, 247, 0.18);
-}
-
-.browser-card:hover::before,
-.browser-card:focus-visible::before {
-    opacity: 1;
-}
-
-.browser-card:active {
-    transform: translateY(-2px) scale(0.98);
-}
-
-.icon-stage {
-    position: relative;
-    z-index: 1;
-    width: 96px;
-    height: 96px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: #f4fbff;
-    box-shadow: 0 0 0 8px rgba(79, 195, 247, 0.08), 0 14px 26px rgba(0, 0, 0, 0.28);
-}
-
-.browser-card:hover .icon-stage,
-.browser-card:focus-visible .icon-stage {
-    transform: rotate(-5deg) scale(1.08);
-    box-shadow: 0 0 0 10px rgba(129, 199, 132, 0.11), 0 18px 34px rgba(79, 195, 247, 0.22);
-}
-
-.icon-stage img {
-    width: 62px;
-    height: 62px;
-    object-fit: contain;
-}
-
-.browser-name {
-    position: relative;
-    z-index: 1;
-    color: #e5e5e5;
-    font-size: 1rem;
-    font-weight: 800;
-    text-align: center;
-}
-
-.download-label {
-    position: relative;
-    z-index: 1;
-    color: #81c784;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.side-stack {
-    display: grid;
-    gap: 26px;
-}
-
-.mini-panel {
-    min-height: 176px;
-    padding: 26px;
-    border: 1px solid rgba(79, 195, 247, 0.15);
-    border-radius: 16px;
-    background: rgba(22, 33, 62, 0.48);
-    animation: fadeUp 0.8s ease-out 0.32s backwards;
-}
-
-.mini-panel h3 {
-    margin: 0 0 12px;
-    color: #81c784;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-}
-
-.mini-panel p {
-    margin: 0;
-    color: #99a8b8;
-    line-height: 1.6;
-}
-
-.status-line {
-    width: 100%;
-    height: 2px;
-    margin-top: 22px;
-    background: linear-gradient(90deg, #4fc3f7, #81c784, transparent);
-    border-radius: 99px;
-}
-
-@media (max-width: 860px) {
-    .collage {
-        grid-template-columns: 1fr;
-    }
-
-    .multimedia-panel {
-        grid-column: auto;
-    }
-
-    .browser-grid {
-        grid-template-columns: repeat(3, minmax(130px, 1fr));
-        overflow-x: auto;
-    }
-
-    .multimedia-grid {
-        grid-template-columns: repeat(4, minmax(130px, 1fr));
-    }
-}
-
-@media (max-width: 620px) {
-    body {
-        padding: 20px 14px 38px;
-    }
-
-    .topbar {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .back-btn {
-        width: 100%;
-    }
-
-    .hero {
-        padding: 48px 0 30px;
-    }
-
-    .section-header {
-        padding: 22px 20px 6px;
-    }
-
-    .browser-grid {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .multimedia-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .browser-card {
-        min-height: 184px;
-    }
-
-    .mini-panel {
-        padding: 22px 20px;
-    }
-}
-</style>
+<link rel="stylesheet" href="win.css">
 </head>
-
 <body>
 <main class="page-shell">
     <header class="topbar">
@@ -404,7 +29,7 @@ h1 {
             </div>
 
             <div class="browser-grid">
-                <a class="browser-card" href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Google Chrome">
+                <a class="browser-card" href="https://www.google.com/chrome/" rel="noopener noreferrer" aria-label="Descargar Google Chrome">
                     <span class="icon-stage">
                         <img src="../../icons/chrome.svg" alt="Google Chrome">
                     </span>
@@ -412,7 +37,7 @@ h1 {
                     <span class="download-label">Descargar</span>
                 </a>
 
-                <a class="browser-card" href="https://www.mozilla.org/en-US/firefox/windows/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Mozilla Firefox">
+                <a class="browser-card" href="https://www.mozilla.org/en-US/firefox/windows/" rel="noopener noreferrer" aria-label="Descargar Mozilla Firefox">
                     <span class="icon-stage">
                         <img src="../../icons/mozilla.svg" alt="Mozilla Firefox">
                     </span>
@@ -420,7 +45,7 @@ h1 {
                     <span class="download-label">Descargar</span>
                 </a>
 
-                <a class="browser-card" href="https://www.opera.com/download" target="_blank" rel="noopener noreferrer" aria-label="Descargar Opera">
+                <a class="browser-card" href="https://www.opera.com/download" rel="noopener noreferrer" aria-label="Descargar Opera">
                     <span class="icon-stage">
                         <img src="../../icons/opera.svg" alt="Opera">
                     </span>
@@ -451,7 +76,7 @@ h1 {
             </div>
 
             <div class="browser-grid multimedia-grid">
-                <a class="browser-card" href="https://www.canva.com/download/windows/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Canva">
+                <a class="browser-card" href="https://www.canva.com/download/windows/" rel="noopener noreferrer" aria-label="Descargar Canva">
                     <span class="icon-stage">
                         <img src="../../icons/canva.svg" alt="Canva">
                     </span>
@@ -459,7 +84,7 @@ h1 {
                     <span class="download-label">Descargar</span>
                 </a>
 
-                <a class="browser-card" href="https://obsproject.com/download" target="_blank" rel="noopener noreferrer" aria-label="Descargar OBS Studio">
+                <a class="browser-card" href="https://obsproject.com/download" rel="noopener noreferrer" aria-label="Descargar OBS Studio">
                     <span class="icon-stage">
                         <img src="../../icons/obs.svg" alt="OBS Studio">
                     </span>
@@ -467,7 +92,7 @@ h1 {
                     <span class="download-label">Descargar</span>
                 </a>
 
-                <a class="browser-card" href="https://www.videolan.org/vlc/download-windows.html" target="_blank" rel="noopener noreferrer" aria-label="Descargar VLC media player">
+                <a class="browser-card" href="https://www.videolan.org/vlc/download-windows.html" rel="noopener noreferrer" aria-label="Descargar VLC media player">
                     <span class="icon-stage">
                         <img src="../../icons/vlc.svg" alt="VLC media player">
                     </span>
@@ -475,7 +100,7 @@ h1 {
                     <span class="download-label">Descargar</span>
                 </a>
 
-                <a class="browser-card" href="https://www.spotify.com/download/windows/" target="_blank" rel="noopener noreferrer" aria-label="Descargar Spotify">
+                <a class="browser-card" href="https://www.spotify.com/download/windows/" rel="noopener noreferrer" aria-label="Descargar Spotify">
                     <span class="icon-stage">
                         <img src="../../icons/spotify.svg" alt="Spotify">
                     </span>

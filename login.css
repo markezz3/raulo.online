@@ -139,6 +139,21 @@ body::before {
     transform: translateY(0);
 }
 
+.guest-link {
+    display: block;
+    margin-top: 16px;
+    color: #9cc8e7;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.guest-link:hover {
+    color: #81c784;
+    transform: translateY(-1px);
+}
+
 .disclaimer {
     margin-top: 24px;
     color: #8ea8c1;

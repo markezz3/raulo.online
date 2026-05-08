@@ -27,8 +27,9 @@
                 <input type="password" id="password" placeholder="Ingresa tu contraseña" required>
             </div>
             <button type="submit" class="login-btn">Iniciar Sesión</button>
+            <a href="portal.html" class="guest-link" id="guestAccess">Ingresar como Invitado</a>
         </form>
-        <p class="login-info">El sitio requiere de un usuario para continuar</p>
+ <!-- <p class="login-info">El sitio requiere de un usuario para continuar</p> -->
     </div>
 </div>
 <script>
@@ -59,6 +60,10 @@ window.addEventListener("load", () => {
     sessionStorage.removeItem("isLoggedIn");
     sessionStorage.removeItem("username");
     document.getElementById("loginForm").addEventListener("submit", handleLogin);
+    document.getElementById("guestAccess").addEventListener("click", () => {
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("username", "invitado");
+    });
 });
 </script>
 </body>

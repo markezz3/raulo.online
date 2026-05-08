@@ -26,49 +26,54 @@ El botón "Comenzar Escaneo" recopilará información detallada sobre tu entorno
 
 <button class="btn reset-btn" id="resetBtn" onclick="reset()">Ocultar Resultados</button>
 
-<!-- 🔽 SECCIONES -->
+<!-- Sección de descargas y enlaces adicionales-->
+
 <div class="sections">
 
     <div class="box">
         <h3>Descargas:</h3>
 
-        <!-- LINKS OFICIALES -->
-        <a href="\Apps\Windows\win.html" target="_blank"><button>WinApps</button></a>
-        <a href="https://d.winrar.es/d/103z1777376047/4kB0j9oBWnFMX7I-Hnxdvw/winrar-x64-720es.exe" target="_blank"><button>WinRAR</button></a>
-        <a href="https://google.com" target="_blank"><button>Anydesk</button></a>
-        <a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.exe" target="_blank"><button>7zip</button></a>
+        <div class="download-grid" aria-label="Accesos de descarga">
+            <a class="download-card" href="Apps/Windows/win.html" aria-label="Ir a WinApps">
+                <span class="download-icon">
+                    <img src="icons/win.svg" alt="">
+                </span>
+                <span class="download-title">WinApps</span>
+            </a>
+
+            <a class="download-card" href="Apps/Repositorios/repositorios.html" aria-label="Ir a Repositorios">
+                <span class="download-icon">
+                    <img src="icons/github.svg" alt="">
+                </span>
+                <span class="download-title">Repositorios</span>
+            </a>
+        </div>
     </div>
+        <aside class="side-stack" aria-label="Información sobre descargas">
+            <div class="mini-panel">
+                <h3>Descripción</h3>
+                <p>Accede rápidamente a aplicaciones y herramientas útiles. Cuando sea posible, las descargas apuntan a fuentes oficiales para mantener un proceso más seguro y confiable.</p>
+                <div class="status-line"></div>
+            </div>
 
-    <div class="box">
-        <h3>Herramientas:</h3>
-
-        <!-- 🔽 PON AQUÍ TUS ARCHIVOS -->
-        <!-- EJEMPLO: Repositorios.html -->
-        <a href="\Apps\Repositorios\repositorios.html" target="_blank"><button>Repositorios</button></a>
-
-        <!-- 🔽 PON AQUÍ TUS ARCHIVOS -->
-        <a href="tools/winactive.exe" download><button>WinActive</button></a>
-    </div>
+            <div class="mini-panel">
+                <h3>Importante</h3>
+                <p>Algunos repositorios y scripts provienen de terceros. Úsalos solo para pruebas, aprendizaje o investigación, y revisa su contenido antes de ejecutarlos en tu equipo.</p>
+                <div class="status-line"></div>
+            </div>
+        </aside>
 </div>
 
 <div class="divider"></div>
 
 <div class="sections">
     <div class="box">
-        <h3>Otros:</h3>
-
-        <!-- 🔽 PON AQUÍ TUS ARCHIVOS -->
-        <!-- EJEMPLO: home -->
-        <a href="https://www.raulo.online" target="_blank"><button>Home</button></a>
-
+        <h3>Otras acciones:</h3>
+        <a href="https://www.raulo.online"><button>Inicio</button></a>
     </div>
-
     <div class="box">
         <h3>Términos y condiciones</h3>
-
-        <!-- 🔽 PON AQUÍ TUS ARCHIVOS -->
-        <!-- EJEMPLO: home -->
-        <a href="terms.html" target="_blank"><button>Ver</button></a>
+        <a href="terms.html"><button>Ver</button></a>
     </div>
 </div>
 
